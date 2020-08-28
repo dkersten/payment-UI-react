@@ -15,11 +15,11 @@ const Form = (props) => {
     }
 
     const handleSubmit = (e) => {
-        
+        props.formSubmitFunc()
     }
 
     return(
-        <form action="">
+        <form onSubmit={handleSubmit}>
             <h2>Payment Information</h2>
             <label htmlFor="name">Name on Card:</label>
             <input onChange={handleNameChange} value={props.name} type="text" className="input-name" name="name" id=""/>

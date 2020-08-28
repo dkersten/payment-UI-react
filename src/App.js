@@ -7,7 +7,7 @@ function App() {
 
   const [name, setName] = useState('John Doe')
   const [num, setNum] = useState('1234567890123456')
-  const [date, setDate] = useState('05/22')
+  const [date, setDate] = useState('2024-12')
 
   const updateName = (name) => {
     setName(name)
@@ -19,6 +19,12 @@ function App() {
 
   const updateDate = (date) => {
     setDate(date)
+  }
+
+  const formSubmit = () => {
+    setName('John Doe')
+    setNum('1234567890123456')
+    setDate('2024-12')
   }
 
   return (
@@ -33,6 +39,7 @@ function App() {
               updateNumFunc={updateNum}
               date={date}
               updateDateFunc={updateDate}
+              formSubmitFunc={formSubmit}
             />
           </div>
           <div className="card-container">
