@@ -15,6 +15,7 @@ const Form = (props) => {
     }
 
     const handleSubmit = (e) => {
+        e.preventDefault()
         props.formSubmitFunc()
     }
 
