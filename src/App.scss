@@ -1,3 +1,247 @@
-body {
-  background: red;
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');
+
+// colors
+$blue-dark: #062560;
+$blue: #013698;
+$blue-light: #0255D8;
+$blue-lighter: #13A4F8;
+$blue-pale: #5F99C7;
+
+$black-dark: #050607;
+$black-light: #13171b;
+
+$grey-darker2: #191c1e;
+$grey-darker: #212527;
+$grey-dark: #30363A;
+$grey: #585A5E;
+$grey-light: #C9CBCD;
+
+* {
+	box-sizing: border-box;
+}
+
+.container {
+	width: 100vw;
+	min-height: 100vh;
+	background: linear-gradient(to bottom right, $black-dark, $grey-darker2);
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+.inner-container {
+	width: 96%;
+	max-width: 1240px;
+	margin: 0 auto;
+	display: flex;
+	
+	> * {
+		flex-basis: 50%;
+	}
+}
+
+.form-container {
+	* {
+		font-family: 'Rubik', sans-serif;
+	}
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	background: $black-light;
+	padding: 2rem;
+	margin: auto;
+	max-width: 500px;
+	border-radius: 40px;
+	box-shadow: 0 0 1px $black-dark;
+	
+	> * {
+		margin: auto;
+		width: 90%;
+		max-width: 375px;
+		font-size: 1.25rem;
+	}
+	
+	h2 {
+		color: $grey-light;
+		text-align: center;
+		font-size: 1.75rem;
+		margin-bottom: 1.5rem;
+		font-weight: 600;
+		letter-spacing: 1px;
+	}
+	
+	label {
+		padding-left: .25rem;
+		color: $blue-light;
+		margin-bottom: .75rem;
+		background: -webkit-linear-gradient(left, $blue, $blue-light);
+		background: -o-linear-gradient(right, $blue, $blue-light);
+		background: -moz-linear-gradient(right, $blue, $blue-light);
+		background: linear-gradient(to right, $blue, $blue-light); 
+	  -webkit-background-clip: text;
+	  -webkit-text-fill-color: transparent;
+	}
+	
+	input[type="text"], input[type="month"] {
+		border: none;
+		color: $grey-light;
+		background: $black-light;
+		height: 45px;
+		border-radius: 15px;
+		margin-bottom: 1.25rem;
+		padding-left: 1rem;
+		box-shadow:  inset 2px 2px 5px $grey-darker, inset -5px -5px 10px $black-dark;
+		
+		&:focus {
+			border: none;
+			outline: none;
+    		box-shadow:  inset 1px 1px 2px $grey-darker, inset -1px -1px 2px $black-dark;
+  		}
+	}
+	
+	input[type="month"] {
+		padding-right: 1rem;
+	}
+	
+	input[type="submit"] {
+		margin-top: .5rem;
+		border: none;
+		color: $grey-light;
+		background: linear-gradient(to right, $blue, $blue-light);
+		height: 45px;
+		border-radius: 15px;
+		margin-bottom: 1.25rem;
+		box-shadow: -5px -5px 20px $black-dark,  5px 5px 20px $black-light;
+		
+		&:hover {
+			cursor: pointer;
+			box-shadow: -2px -2px 5px $black-dark, 2px 2px 5px $black-light;
+		}
+
+		&:focus {
+			border: none;
+			outline: none;
+			box-shadow: -2px -2px 5px $black-dark, 2px 2px 5px $black-light;
+		}
+	}
+}
+
+.card-container {
+	.card {
+		margin: auto;
+		margin-top: 50px;
+		width: 375px;
+		height: 205px;
+		position: relative;
+		background-color: $grey-darker;
+		color: $blue-light;
+		border-radius: 15px;
+		box-shadow: -2px 2px 5px 2px rgba(0,0,0,0.65);
+		transform: translate(0px, 0px) rotate(-10deg);
+		overflow: hidden;
+	}
+
+	.card:hover {
+		transform: translate(-5px, -10px) rotate(-2.5deg);
+		transition: all .5s cubic-bezier(.44,-0.37,.84,1.32); 
+		cursor: pointer;
+	}
+
+	.circle-sm {
+		position: absolute;
+		right: -50px;
+		bottom: -50px;
+		z-index: 3;
+		height: 125px;
+		width: 125px;
+		border-radius: 50%;
+		background: radial-gradient($blue, $blue-dark);
+	}
+
+	.circle-bg {
+		position: absolute;
+		right: -140px;
+		bottom: -75px;
+		height: 350px;
+		width: 350px;
+		border-radius: 50%;
+		background-color: $grey-darker2;
+		z-index: 2;
+	}
+
+	h1 {
+		position: absolute;
+		top: 20px;
+		left: 35px;
+		font-size: 20px;
+		z-index: 4;
+		font-family: 'IBM Plex Mono', monospace;
+	}
+
+	h2 {
+		position: absolute;
+		top: 50px;
+		left: 55px;
+		letter-spacing: 2.5px;
+		font-weight: 500;
+		font-size: 16px;
+		z-index: 4;
+		font-family: 'IBM Plex Mono', monospace;
+	}
+
+	.member {
+		position: absolute;
+		left: 35px;
+		top: 105px;
+		font-weight: 600;
+		letter-spacing: 1px;
+		z-index: 4;
+		font-family: 'IBM Plex Mono', monospace;
+	}
+
+	.name {
+		position: absolute;
+		left: 35px;
+		top: 125px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		z-index: 4;
+		font-family: 'IBM Plex Mono', monospace;
+	}
+	
+	.expiration {
+		position: absolute;
+		left: 35px;
+		top: 152px;
+		font-weight: 600;
+		letter-spacing: 1px;
+		z-index: 4;
+		font-family: 'IBM Plex Mono', monospace;
+	}
+	
+	.date {
+		position: absolute;
+		left: 35px;
+		top: 172px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		z-index: 4;
+		font-family: 'IBM Plex Mono', monospace;
+	}	
+}
+
+@media only screen and (max-width: 960px) {
+	.inner-container {
+		flex-direction: column;
+	}
+	
+	> * {
+		flex-basis: 100%
+	}
+	
+	form {
+		margin-bottom: 2.5rem;
+	}
 }
