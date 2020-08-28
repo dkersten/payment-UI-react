@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.scss';
 import Form from './components/Form';
+import Card from './components/Card';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
             <Form></Form>
           </div>
           <div className="card-container">
-            
+            <Card></Card>
           </div>
         </div>
       </div>
